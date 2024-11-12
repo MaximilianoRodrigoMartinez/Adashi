@@ -41,7 +41,8 @@ CSS3: Estilos y diseño responsivo (usando Bootstrap).
 
 JavaScript: Para interactividad y lógica en el frontend.
 
-Contribuciones
+
+## Contribuciones 
 
 Si deseas contribuir al proyecto, por favor sigue estos pasos:
 
