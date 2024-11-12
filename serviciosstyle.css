@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Usamos Poppins */
+}
+
+.fondo {
+    background-image: url('static/Tarot.png'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-centrado {
+    text-align: center;
+    color: #fff; /* Blanco para el texto, más legible */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    padding: 30px; /* Más espacio alrededor */
+    border-radius: 8px;
+    font-size: 1.5rem; /* Aumento del tamaño de la fuente */
+    line-height: 1.6; /* Aumento del espaciado entre líneas */
+    max-width: 80%; /* Evitar que el texto se extienda demasiado en pantallas grandes */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Agregar sombra para mejorar contraste */
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    font-weight: 300; /* Texto más liviano */
+}
+
+/* Botón flotante */
+.btn-flotante {
+    position: fixed;
+    bottom: 20px;  /* Ajusta el valor para moverlo más arriba o abajo */
+    right: 20px;   /* Lo mueve a la derecha */
+    padding: 15px 25px;
+    background-color: #a05b00;  /* Color marrón */
+    color: white;
+    border-radius: 50px; /* Hacerlo circular */
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999; /* Para asegurarse de que esté por encima de otros elementos */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animación también para el color */
+}
+
+.btn-flotante:hover {
+    background-color: #8e4f00;  /* Un tono más oscuro para el hover */
+    color: #e5c7a0;
+}
