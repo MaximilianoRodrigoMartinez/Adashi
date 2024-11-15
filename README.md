@@ -1,3 +1,4 @@
+# ![Talento Tech](https://aulasvirtuales.bue.edu.ar/pluginfile.php/1/theme_academiaba/logo/1731423427/logo_header.jpg)
 # Adashi Tienda Holística
 
 **Adashi Tienda Holística** es una tienda en línea dedicada a la venta de productos para el bienestar físico y espiritual. El proyecto está construido con HTML, CSS y JavaScript, ofreciendo una interfaz sencilla y amigable para el usuario.
