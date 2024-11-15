@@ -81,22 +81,6 @@ h2 {
     align-items: center;
 }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .texto-centrado {
-        font-size: 1.2rem; 
-        padding: 20px; 
-        max-width: 90%; 
-    }
-
-    h1 {
-        font-size: 2.5rem; 
-    }
-
-    p {
-        font-size: 1rem; 
-    }
-}
 
 /* Estilos para pantallas muy pequeñas */
 @media (max-width: 480px) {
@@ -119,6 +103,79 @@ h2 {
         font-size: 16px; 
         bottom: 10px; 
         right: 10px;  
+    }
+}
+
+/* Media query */
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none !important; /* Ocultar el menú de navegación */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #f0e4d7;
+        width: 200px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+    }
+    
+    /* Mostrar el menú cuando se hace clic */
+    .nav-links.show {
+        display: flex !important;
+    }
+
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle:hover + .nav-links {
+        display: flex;
+    }
+    
+    /* Estilo para el contenido del menú hamburguesa */
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 8px 15px;
+        text-align: center;
+        background-color: #f0e4d7;
+        border-radius: 5px;
+    }
+
+    .texto-centrado {
+        font-size: 1.2rem; 
+        padding: 20px; 
+        max-width: 90%; 
+    }
+
+    h1 {
+        font-size: 2.5rem; 
+    }
+
+    p {
+        font-size: 1rem; 
+    }
+}
+
+
+
+
+/* Para pantallas grandes */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
     }
 }
 
