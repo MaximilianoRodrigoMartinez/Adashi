@@ -85,6 +85,7 @@ productos.forEach((producto) => {
                 <div class="card-body">
                     <h5 class="card-title">${producto.name}</h5>
                     <p class="card-text"><strong>Precio: $${producto.amount}</strong></p>
+                    <button class="btn btn-success btn-agregar" data-id="${producto.id}" data-name="${producto.name}" data-price="${producto.amount}">Agregar al carrito</button>
                     <button id="mostrarInfo-${producto.id}" type="button" class="btn btn-primary">Ver más</button>
                     <div id="descripcion-${producto.id}" class="descripcion-ampliada" style="display: none;"></div>
                 </div>
@@ -109,6 +110,84 @@ productos.forEach((producto) => {
         }
     });
 });
+
+let carrito = [];
+
+// Recuperar carrito del sessionStorage si existe
+if (sessionStorage.getItem("carrito")) {
+    carrito = JSON.parse(sessionStorage.getItem("carrito"));
+}
+
+// Agregar funcionalidad a los botones "Agregar al carrito"
+document.querySelectorAll(".btn-agregar").forEach((boton) => {
+    boton.addEventListener("click", () => {
+        const id = boton.getAttribute("data-id");
+        const name = boton.getAttribute("data-name");
+        const price = boton.getAttribute("data-price");
+
+        // Crear un objeto con el producto
+        const producto = { id, name, price };
+
+        // Agregar al carrito
+        carrito.push(producto);
+
+        // Guardar en sessionStorage
+        sessionStorage.setItem("carrito", JSON.stringify(carrito));
+
+        mostrarCarrito(); // Actualiza el carrito automáticamente
+        alert(`${name} ha sido agregado al carrito.`);
+    });
+});
+
+function mostrarCarrito() {
+    const carritoContenedor = document.getElementById("carrito-contenedor");
+    carritoContenedor.innerHTML = ""; // Limpiar el contenedor
+
+    if (carrito.length === 0) {
+        carritoContenedor.innerHTML = "<p>El carrito está vacío.</p>";
+    } else {
+        carritoContenedor.innerHTML = carrito.map((producto, index) => `
+            <p>${producto.name} - $${producto.price} 
+                <button class="btn btn-sm btn-danger btn-eliminar" data-index="${index}">Eliminar</button>
+            </p>
+        `).join('');
+    }
+
+    // Asignar eventos a los botones de eliminar dentro de la función
+    document.querySelectorAll('.btn-eliminar').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const index = boton.getAttribute('data-index');
+            eliminarProducto(index);
+        });
+    });
+
+    function eliminarProducto(index) {
+        carrito.splice(index, 1); // Elimina el producto del array por índice
+        sessionStorage.setItem("carrito", JSON.stringify(carrito)); // Actualiza el sessionStorage
+        mostrarCarrito(); // Vuelve a mostrar el carrito actualizado
+    }
+    
+}
+
+
+    // Asignar eventos a los botones de eliminar
+    document.querySelectorAll('.btn-eliminar').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const index = boton.getAttribute('data-index');
+            eliminarProducto(index);
+        });
+    });
+
+// Vaciar todo el carrito
+document.getElementById("vaciar-carrito").addEventListener("click", () => {
+    carrito = [];
+    sessionStorage.removeItem("carrito");
+    mostrarCarrito();
+});
+
+mostrarCarrito(); // Mostrar el carrito al cargar la página
+
+
 }
 
 
