@@ -8,11 +8,13 @@ body {
     background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
     color: #4c3a28; 
     overflow-x: hidden; 
+    
 }
 
 main {
     text-align: center;
     margin: auto;
+
 }
 
 /* Banner */
@@ -43,8 +45,9 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #f0e4d7;
+    background-color: #e5c7a0;
     background: linear-gradient(135deg, #f0e4d7, #e5c7a0);
+    position: relative;
 }
 
 .header-content {
@@ -90,6 +93,15 @@ header {
 .header-content h1 {
     font-size: 50px; 
     margin: 0;
+}
+
+/* Carrito */
+#carrito-contenedor {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
 }
 
 /* Navbar */
@@ -144,6 +156,14 @@ header {
 }
 
 /* Productos */
+
+#productos {
+    margin-left: 270px; /* Deja espacio para el Aside */
+    padding: 20px;
+    flex: 1; /* El contenido ocupa el resto del espacio */
+    background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
+}
+
 .card-img-top {
     object-fit: cover;
     width: 100%;
@@ -161,6 +181,7 @@ header {
 }
 
 .card-title {
+    text-align: center;
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 0.5em;
@@ -168,6 +189,7 @@ header {
 }
 
 .card-text {
+    text-align: center;
     font-size: 0.9em;
     margin-bottom: 1em;
     color: #4c3a28;
@@ -180,6 +202,8 @@ header {
 }
 
 .btn {
+    height: auto;
+    padding: 3%;
     background: #d88a36; 
     margin-top: auto;
 }
@@ -208,16 +232,36 @@ header {
 
 .descripcion-ampliada {
     text-align:center;
+    font-weight: bolder;
 }
 
 
 /* Aside */
 
 aside {
-    width: 25%;
+    width: 15%; /* Ancho fijo del menú lateral */
+    background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    position: fixed; /* Lo deja fijo a la izquierda */
+    top: 28%;
+    left: 0%;
+}
+
+aside a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+aside a:hover {
+    background-color: #ddd; /* Efecto hover */
 }
 
 /* Cartas de inicio */
+
 #cards {
     background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
     padding: 2em;
@@ -264,6 +308,7 @@ aside {
 
 
 /* Sección contacto */
+
 #contactopage {
     background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
     border-radius: 8px;
@@ -277,6 +322,7 @@ aside {
 }
 
 /* Formulario */
+
 form label {
     display: block;
     margin-bottom: 0.5em;

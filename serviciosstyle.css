@@ -110,7 +110,7 @@ h2 {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none !important; /* Ocultar el menú de navegación */
+        display: none !important; 
         position: absolute;
         top: 60px;
         right: 0;

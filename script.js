@@ -134,17 +134,17 @@ document.querySelectorAll(".btn-agregar").forEach((boton) => {
         // Guardar en sessionStorage
         sessionStorage.setItem("carrito", JSON.stringify(carrito));
 
-        mostrarCarrito(); // Actualiza el carrito automáticamente
+        mostrarCarrito(); 
         alert(`${name} ha sido agregado al carrito.`);
     });
 });
 
 function mostrarCarrito() {
     const carritoContenedor = document.getElementById("carrito-contenedor");
-    carritoContenedor.innerHTML = ""; // Limpiar el contenedor
+    carritoContenedor.innerHTML = ""; 
 
     if (carrito.length === 0) {
-        carritoContenedor.innerHTML = "<p>El carrito está vacío.</p>";
+        carritoContenedor.innerHTML = "<p>El carrito está vacío</p>";
     } else {
         carritoContenedor.innerHTML = carrito.map((producto, index) => `
             <p>${producto.name} - $${producto.price} 
@@ -162,9 +162,9 @@ function mostrarCarrito() {
     });
 
     function eliminarProducto(index) {
-        carrito.splice(index, 1); // Elimina el producto del array por índice
-        sessionStorage.setItem("carrito", JSON.stringify(carrito)); // Actualiza el sessionStorage
-        mostrarCarrito(); // Vuelve a mostrar el carrito actualizado
+        carrito.splice(index, 1); 
+        sessionStorage.setItem("carrito", JSON.stringify(carrito)); 
+        mostrarCarrito(); 
     }
     
 }
@@ -185,7 +185,7 @@ document.getElementById("vaciar-carrito").addEventListener("click", () => {
     mostrarCarrito();
 });
 
-mostrarCarrito(); // Mostrar el carrito al cargar la página
+mostrarCarrito(); 
 
 
 }
@@ -194,7 +194,6 @@ mostrarCarrito(); // Mostrar el carrito al cargar la página
 
 
 generarProductos();
-
 
 
 
