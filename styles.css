@@ -158,9 +158,9 @@ header {
 /* Productos */
 
 #productos {
-    margin-left: 270px; /* Deja espacio para el Aside */
+    margin-left: 270px; 
     padding: 20px;
-    flex: 1; /* El contenido ocupa el resto del espacio */
+    flex: 1; 
     background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
 }
 
@@ -177,7 +177,9 @@ header {
     padding: 2em;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr)); 
+    height: 320px;
+
 }
 
 .card-title {
@@ -215,7 +217,7 @@ header {
 .btn:active, .btn:focus {
     background-color: #d88a36;  
     outline: none;              
-    box-shadow: none;           
+    box-shadow: none;      
 }
 
 #productos-container .card {
@@ -239,11 +241,11 @@ header {
 /* Aside */
 
 aside {
-    width: 15%; /* Ancho fijo del menú lateral */
+    width: 15%; 
     background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
     padding: 15px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
-    position: fixed; /* Lo deja fijo a la izquierda */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    position: fixed; 
     top: 28%;
     left: 0%;
 }
@@ -257,12 +259,12 @@ aside a {
 }
 
 aside a:hover {
-    background-color: #ddd; /* Efecto hover */
+    background-color: #ddd; 
 }
 
 /* Cartas de inicio */
 
-#cards {
+#cardsinicio {
     background: linear-gradient(135deg, #f0e4d7, #e5c7a0); 
     padding: 2em;
     display: grid;
@@ -270,7 +272,7 @@ aside a:hover {
     grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-#cards .card {
+#cardsinicio .cardinicio {
     background-color: #e5c7a0; 
     border: 1px solid #e5c7a0; 
     border-radius: 8px;
@@ -282,7 +284,7 @@ aside a:hover {
     text-align: center;
 }
 
-#cards .card img {
+#cardsinicio .cardinicio img {
     width: 100%; 
     max-width: 400px; 
     height: 400px; 
